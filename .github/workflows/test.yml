@@ -4,15 +4,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      node_version: 18.4.0
+      node_version: 20.16.0
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Dynamic Use
         uses: ./../dynamic-uses
         id: setup_node
         with:
-          uses: "${{ 'actions/setup-node@v3' }}"
+          uses: "${{ 'actions/setup-node@v4' }}"
           with: '{ "node-version": "${{ env.node_version }}" }'
       - name: Validate outputs
         run: |
